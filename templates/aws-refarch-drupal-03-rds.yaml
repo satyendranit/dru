@@ -39,6 +39,7 @@ Parameters:
 
   DatabaseInstanceType:
     AllowedValues:
+      - db.t2.micro
       - db.t2.small
       - db.t2.medium
       - db.r3.large
@@ -47,7 +48,7 @@ Parameters:
       - db.r3.4xlarge
       - db.r3.8xlarge    
     ConstraintDescription: Must be a valid RDS instance class.
-    Default: db.t2.medium
+    Default: db.t2.micro
     Description: The Amazon RDS database instance class.
     Type: String
   DatabaseMasterUsername:
@@ -58,7 +59,7 @@ Parameters:
     MinLength: 1
     Type: String
   DatabaseMasterPassword:
-    AllowedPattern: ^([a-z0-9A-Z`~!#$%^&*()_+,\\-])*$
+    AllowedPattern: ^([a-z0-9A-Z])*$
     ConstraintDescription: Must be letters (upper or lower), numbers, and these special characters '_'`~!#$%^&*()_+,-    
     Description: The Amazon RDS master password.
     MaxLength: 41
