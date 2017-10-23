@@ -95,6 +95,7 @@ Parameters:
     Type: String
   DatabaseInstanceType:
     AllowedValues:
+      - db.t2.micro
       - db.t2.small
       - db.t2.medium
       - db.r3.large
@@ -103,7 +104,7 @@ Parameters:
       - db.r3.4xlarge
       - db.r3.8xlarge
     ConstraintDescription: Must be a valid RDS instance class.
-    Default: db.t2.medium
+    Default: db.t2.micro
     Description: The Amazon RDS database instance class.
     Type: String
   DatabaseMasterUsername:
@@ -114,11 +115,11 @@ Parameters:
     MinLength: 1
     Type: String
   DatabaseMasterPassword:
-    AllowedPattern: ^([a-zA-Z0-9`~!#$%^&*()_+,\\-])*$
+    AllowedPattern: ^([a-zA-Z0-9])*$
     ConstraintDescription: Must be letters (upper or lower), numbers, spaces, and these special characters `~!#$%^&*()_+,-
     Description: The Amazon RDS master password. Letters, numbers, spaces, and these special characters `~!#$%^&*()_+,-
     MaxLength: 41
-    MinLength: 8
+    MinLength: 6
     NoEcho: true
     Type: String
   DatabaseName:
@@ -145,7 +146,7 @@ Parameters:
       - cache.r3.4xlarge
       - cache.r3.8xlarge
     ConstraintDescription: Must be a valid Amazon ElastiCache node type.
-    Default: cache.t2.medium
+    Default: cache.t2.micro
     Description: The Amazon ElastiCache cluster node type.
     Type: String
   KeyName:
@@ -216,7 +217,7 @@ Parameters:
       - r3.4xlarge
       - r3.8xlarge
     ConstraintDescription: Must be a valid Amazon EC2 instance type.
-    Default: t2.large
+    Default: t2.micro
     Description: The Amazon EC2 instance type for your web instances.
     Type: String
   AdminEmail:
@@ -224,7 +225,7 @@ Parameters:
     Description: The Drupal admin email address.
     Type: String
   AdminPassword:
-    AllowedPattern: ^([a-zA-Z0-9`~!#$%^&*()_+,\\-])*$
+    AllowedPattern: ^([a-zA-Z0-9])*$
     ConstraintDescription: Must be letters (upper or lower), numbers, spaces, and these special characters `~!#$%^&*()_+,-    
     Description: The Drupal admin password. Letters, numbers, spaces, and these special characters `~!#$%^&*()_+,-
     Type: String
