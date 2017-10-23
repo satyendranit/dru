@@ -170,7 +170,7 @@ Parameters:
       - r3.4xlarge
       - r3.8xlarge
     ConstraintDescription: Must be a valid Amazon EC2 instance type.
-    Default: t2.large
+    Default: t2.micro
     Description: The Amazon EC2 instance type for your web instances.
     Type: String
   WebSecurityGroup:
@@ -190,7 +190,7 @@ Parameters:
     Description: The Drupal admin email address.
     Type: String
   AdminPassword:
-    AllowedPattern: ^([a-zA-Z0-9`~!#$%^&*()_+,\\-])*$
+    AllowedPattern: ^([a-zA-Z0-9])*$
     ConstraintDescription: Must be letters (upper or lower), numbers, and these special characters '_'`~!#$%^&*()_+,-   
     Description: The Drupal admin password.
     Type: String
